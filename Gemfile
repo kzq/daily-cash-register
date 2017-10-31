@@ -41,6 +41,7 @@ gem 'jquery-rails', '~> 4.3.1'
 # CSS
 # Bootstrap 4 ruby gem for Ruby on Rails (Sprockets) and Hanami (formerly Lotus).
 gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'coffee-rails'
 
 group :test do
   gem "database_cleaner"
