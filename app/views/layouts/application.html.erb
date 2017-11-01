@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-textdirection="ltr" class="loading">
   <%= render 'layouts/head' %>
-  <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-        <% flash.each do |name, msg| %>
-            <%= content_tag(:div, msg, class: "alert alert-info") %>
-        <% end %>
-        <%= yield %>
-    </div>
+  <body data-open="click" data-menu="vertical-menu" data-col="1-column" class="vertical-layout vertical-menu 1-column  blank-page blank-page">
+    <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
