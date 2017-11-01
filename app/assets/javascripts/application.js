@@ -13,6 +13,15 @@
 //= require jquery3
 //= require jquery_ujs
 //= require popper
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require activestorage
+//= require vendors/ui/tether.min
+//= require vendors/ui/perfect-scrollbar.jquery.min
+//= require vendors/ui/unison.min
+//= require vendors/ui/blockUI.min
+//= require vendors/ui/jquery.matchHeight.min
+//= require vendors/ui/screenfull.min
+//= require vendors/extensions/pace.min
+//= require core/app-menu
+//= require core/app
 //= require_tree .

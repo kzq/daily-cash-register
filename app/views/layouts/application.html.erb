@@ -1,14 +1,8 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>DailyCashRegister</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+<html lang="en" data-textdirection="ltr" class="loading">
+  <%= render 'layouts/head' %>
+  <body data-open="click" data-menu="vertical-menu" data-col="1-column" class="vertical-layout vertical-menu 1-column  blank-page blank-page">
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
