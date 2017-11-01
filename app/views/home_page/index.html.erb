@@ -8,7 +8,7 @@
         <div class="card border-grey border-lighten-3 m-0">
             <div class="card-header no-border">
                 <div class="card-title text-xs-center">
-                    <div class="p-1"><img src="/assets/logo/robust-logo-dark.png"<%#= asset_path 'logo/robust-logo-dark.png' %> alt="DCR logo"></div>
+                    <div class="p-1"><%= image_tag 'logo/robust-logo-dark.png', alt: "DCR logo"%></div>
                 </div>
                 <h6 class="card-subtitle line-on-side text-muted text-xs-center font-small-3 pt-2"><span>Login with DCR</span></h6>
             </div>
@@ -34,7 +34,7 @@
                                     <label for="remember-me"> Remember Me</label>
                                 </fieldset>
                             </div>
-                            <div class="col-md-6 col-xs-12 text-xs-center text-md-right"><a href="recover-password.html" class="card-link">Forgot Password?</a></div>
+                            <div class="col-md-6 col-xs-12 text-xs-center text-md-right"><%= link_to 'Forgot Password?', '#', class: 'card-link' %></div>
                         </fieldset>
                         <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="icon-unlock2"></i> Login</button>
                     </form>
@@ -42,8 +42,8 @@
             </div>
             <div class="card-footer">
                 <div class="">
-                    <p class="float-sm-left text-xs-center m-0"><a href="recover-password.html" class="card-link">Recover password</a></p>
-                    <p class="float-sm-right text-xs-center m-0">New to DCR? <a href="register-simple.html" class="card-link">Sign Up</a></p>
+                    <p class="float-sm-left text-xs-center m-0"><%= link_to 'Recover password', '#', class: 'card-link' %></p>
+                    <p class="float-sm-right text-xs-center m-0">New to DCR? <%= link_to 'Sign Up', '#', class: 'card-link' %></p>
                 </div>
             </div>
         </div>
