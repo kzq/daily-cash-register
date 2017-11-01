@@ -13,4 +13,26 @@
  */
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
+
+/*** Bootstrap Gem **/
 @import "bootstrap";
+
+/*** ROBUST Theme scss Files ***/
+
+// Font icons
+@import "icomoon";
+@import "extensions/pace";
+@import "flag-icon-css/css/flag-icon";
+
+// ROBUST scss
+@import "app";
+@import "colors";
+@import "bootstrap-extended";
+
+// Page level scss
+@import "pages/login-register";
+@import "core/menu/menu-types/vertical-menu";
+@import "core/menu/menu-types/vertical-overlay-menu";
+
+// Custom CSS
+@import "style";
