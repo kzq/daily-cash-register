@@ -1,24 +1,18 @@
-# README
+# Daily Cash Register
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A web app to record daily sales information of your bussiness. Application is based on Bootstarp 4, Rails 5.2 and PostgreSQL database.
 
-Things you may want to cover:
+## Getting the Application
 
-* Ruby version
+You can clone the GitHub repo
 
-* System dependencies
+```git
+git clone https://github.com/kzq/daily-cash-register.git
+```
+This application uses
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ 1. Devise for authentication
+ 2. Bootstrap for Frontend
+ 3. Jquery
+ 4. Rails action cable
+ 5. Rails active storage
