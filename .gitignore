@@ -39,3 +39,6 @@ config/database.yml
 config/cable.yml
 config/mail.yml
 .env
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key

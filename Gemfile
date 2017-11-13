@@ -34,6 +34,11 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# authentication
+
+# Devise is a flexible authentication solution for Rails based applications
+gem 'devise', '~> 4.3.0'
+
 # Javascript
 # JQuery for rails
 gem 'jquery-rails', '~> 4.3.1'

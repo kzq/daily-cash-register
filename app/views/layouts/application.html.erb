@@ -2,6 +2,8 @@
 <html lang="en" data-textdirection="ltr" class="loading">
   <%= render 'layouts/head' %>
   <body data-open="click" data-menu="vertical-menu" data-col="1-column" class="vertical-layout vertical-menu 1-column  blank-page blank-page">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
