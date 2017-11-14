@@ -1,26 +1,63 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="app-content content container-fluid">
+      <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+    <section class="flexbox-container">
+    <div class="col-md-4 offset-md-4 col-xs-10 offset-xs-1  box-shadow-2 p-0">
+        <div class="card border-grey border-lighten-3 m-0">
+            <div class="card-header no-border">
+                <div class="card-title text-xs-center">
+                    <div class="p-1"><%= image_tag 'logo/robust-logo-dark.png', alt: "DCR logo"%></div>
+                </div>
+                <h6 class="card-subtitle line-on-side text-muted text-xs-center font-small-3 pt-2"><span>Login with DCR</span></h6>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block">
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal form-simple") do |f| %>
+                        <fieldset class="form-group position-relative has-icon-left mb-0">
+                            <%= f.email_field :email, class: "form-control form-control-lg input-lg", id: "user_name", placeholder: "Your Username", required: true,tofocus: true %>
+                            <div class="form-control-position">
+                                <i class="icon-head"></i>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group position-relative has-icon-left">
+                            <%= f.password_field :password, autocomplete: "off", class: "form-control form-control-lg input-lg", id: "user-password", placeholder: "Enter Password", required: true%>
+                            <div class="form-control-position">
+                                <i class="icon-key3"></i>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group row">
+                            <div class="col-md-6 col-xs-12 text-xs-center text-md-left">
+                                <fieldset>
+                                    <%= f.check_box :remember_me, id:"remember-me", class: "chk-remember" %>
+                                    <label for="remember-me"> Remember Me</label>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6 col-xs-12 text-xs-center text-md-right"><%= link_to 'Forgot Password?', '#', class: 'card-link' %></div>
+                        </fieldset>
+                        <%= f.button  type: 'submit', class: "btn btn-primary btn-lg btn-block" do %>
+                          <i class="icon-unlock2"></i> Login
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="">
+                    <p class="float-sm-left text-xs-center m-0"><%= link_to 'Recover password', new_password_path(resource_name), class: 'card-link' %></p>
+                    <p class="float-sm-right text-xs-center m-0">New to DCR? <%= link_to 'Sign Up', new_user_registration_path, class: 'card-link' %></p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="">
+                    <p class="float-sm-left text-xs-center m-0"><%= link_to 'Didn\'t receive confirmation instructions?', new_confirmation_path(resource_name), class: 'card-link' %></p>
+                    <p class="float-sm-right text-xs-center m-0"><%= link_to 'Didn\'t receive unlock instructions?', new_unlock_path(resource_name), class: 'card-link' %></p>
+                </div>
+            </div>
+        </div>
     </div>
-  <% end -%>
+</section>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
