@@ -14,7 +14,7 @@
             </div>
             <div class="card-body collapse in">
                 <div class="card-block">
-                    <form class="form-horizontal form-simple" action="index.html" novalidate>
+                    <form class="form-horizontal form-simple" action="<%=new_user_session_path%>" novalidate>
                         <fieldset class="form-group position-relative has-icon-left mb-0">
                             <input type="text" class="form-control form-control-lg input-lg" id="user-name" placeholder="Your Username" required>
                             <div class="form-control-position">
@@ -43,7 +43,7 @@
             <div class="card-footer">
                 <div class="">
                     <p class="float-sm-left text-xs-center m-0"><%= link_to 'Recover password', '#', class: 'card-link' %></p>
-                    <p class="float-sm-right text-xs-center m-0">New to DCR? <%= link_to 'Sign Up', '#', class: 'card-link' %></p>
+                    <p class="float-sm-right text-xs-center m-0">New to DCR? <%= link_to 'Sign Up', new_user_registration_path, class: 'card-link' %></p>
                 </div>
             </div>
         </div>
