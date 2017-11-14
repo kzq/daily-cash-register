@@ -14,8 +14,10 @@
             </div>
             <div class="card-body collapse in">
                 <div class="card-block">
+                    <%= form_for(:user, as: resource_name, url: session_path(resource_name), class: "form-horizontal form-simple") do |f| %>
                     <form class="form-horizontal form-simple" action="<%=new_user_session_path%>" novalidate>
                         <fieldset class="form-group position-relative has-icon-left mb-0">
+                            <%= f.email_field :email, class: "form-control form-control-lg input-lg", id: "user_name", placeholder: "Your Username", required: true,tofocus: true %>
                             <input type="text" class="form-control form-control-lg input-lg" id="user-name" placeholder="Your Username" required>
                             <div class="form-control-position">
                                 <i class="icon-head"></i>
@@ -38,6 +40,7 @@
                         </fieldset>
                         <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="icon-unlock2"></i> Login</button>
                     </form>
+                    <% end %>
                 </div>
             </div>
             <div class="card-footer">
