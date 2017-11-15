@@ -3,6 +3,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
    def new
+     store_return_to
      super
    end
 
