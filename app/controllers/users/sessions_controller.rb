@@ -1,11 +1,11 @@
 class Users::SessionsController < Devise::SessionsController
-   before_action :configure_sign_in_params, only: [:create]
+  before_action :configure_sign_in_params, only: [:create]
+  prepend_before_action :require_no_authentication, only: [:new, :create, :cancel]
 
   # GET /resource/sign_in
-   def new
-     store_return_to
-     super
-   end
+  def new
+    super
+  end
 
   # POST /resource/sign_in
   def create
@@ -21,6 +21,6 @@ class Users::SessionsController < Devise::SessionsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_in_params
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
+    devise_parameter_sanitizer.permit(:sign_in)
   end
 end

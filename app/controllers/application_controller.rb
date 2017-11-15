@@ -15,4 +15,14 @@ class ApplicationController < ActionController::Base
     user_signed_in? ? 'user' : 'guest'
   end
 
+  protected
+
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || root_path
+  end
+
+  def stored_location_for(resource)
+    store_location_for(resource, user_path(resource))
+  end
+
 end
