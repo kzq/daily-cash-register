@@ -14,17 +14,15 @@
             </div>
             <div class="card-body collapse in">
                 <div class="card-block">
-                    <%= form_for(:user, as: resource_name, url: session_path(resource_name), class: "form-horizontal form-simple") do |f| %>
-                    <form class="form-horizontal form-simple" action="<%=new_user_session_path%>" novalidate>
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal form-simple") do |f| %>
                         <fieldset class="form-group position-relative has-icon-left mb-0">
                             <%= f.email_field :email, class: "form-control form-control-lg input-lg", id: "user_name", placeholder: "Your Username", required: true,tofocus: true %>
-                            <input type="text" class="form-control form-control-lg input-lg" id="user-name" placeholder="Your Username" required>
                             <div class="form-control-position">
                                 <i class="icon-head"></i>
                             </div>
                         </fieldset>
                         <fieldset class="form-group position-relative has-icon-left">
-                            <input type="password" class="form-control form-control-lg input-lg" id="user-password" placeholder="Enter Password" required>
+                            <%= f.password_field :password, autocomplete: "off", class: "form-control form-control-lg input-lg", id: "user-password", placeholder: "Enter Password", required: true%>
                             <div class="form-control-position">
                                 <i class="icon-key3"></i>
                             </div>
@@ -32,21 +30,28 @@
                         <fieldset class="form-group row">
                             <div class="col-md-6 col-xs-12 text-xs-center text-md-left">
                                 <fieldset>
-                                    <input type="checkbox" id="remember-me" class="chk-remember">
+                                    <%= f.check_box :remember_me, id:"remember-me", class: "chk-remember" %>
                                     <label for="remember-me"> Remember Me</label>
                                 </fieldset>
                             </div>
                             <div class="col-md-6 col-xs-12 text-xs-center text-md-right"><%= link_to 'Forgot Password?', '#', class: 'card-link' %></div>
                         </fieldset>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="icon-unlock2"></i> Login</button>
-                    </form>
+                        <%= f.button  type: 'submit', class: "btn btn-primary btn-lg btn-block" do %>
+                          <i class="icon-unlock2"></i> Login
+                        <% end %>
                     <% end %>
                 </div>
             </div>
             <div class="card-footer">
                 <div class="">
-                    <p class="float-sm-left text-xs-center m-0"><%= link_to 'Recover password', '#', class: 'card-link' %></p>
+                    <p class="float-sm-left text-xs-center m-0"><%= link_to 'Recover password', new_password_path(resource_name), class: 'card-link' %></p>
                     <p class="float-sm-right text-xs-center m-0">New to DCR? <%= link_to 'Sign Up', new_user_registration_path, class: 'card-link' %></p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="">
+                    <p class="float-sm-left text-xs-center m-0"><%= link_to 'Didn\'t receive confirmation instructions?', new_confirmation_path(resource_name), class: 'card-link' %></p>
+                    <p class="float-sm-right text-xs-center m-0"><%#= link_to 'Didn\'t receive unlock instructions?', new_unlock_path(resource_name), class: 'card-link' %></p>
                 </div>
             </div>
         </div>
