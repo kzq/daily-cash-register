@@ -13,9 +13,9 @@
 //= require jquery3
 //= require jquery_ujs
 //= require popper
-//= require bootstrap
-//= require activestorage
 //= require vendors/ui/tether.min
+//= require core/bootstrap.min
+//= require activestorage
 //= require vendors/ui/perfect-scrollbar.jquery.min
 //= require vendors/ui/unison.min
 //= require vendors/ui/blockUI.min
