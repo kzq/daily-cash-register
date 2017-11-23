@@ -1,0 +1,14 @@
+<%= link_to notifications_path, class: 'list-group-item' do%>
+  <%= tag.div class: 'media' do %>
+    <%= tag.div class: 'media-left valign-middle' do %>
+      <%= add_icon('icon-cart3 icon-bg-circle bg-cyan') %>
+    <% end %>
+    <%= tag.div class: 'media-body' do %>
+      <%= tag.h6 notification.title, class: 'media-heading' %>
+      <%= tag.p notification.body, class: 'notification-text font-small-3 text-muted' %>
+      <%= tag.small do%>
+        <%= tag.time '30 minutes ago', class: 'media-meta text-muted'%>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
