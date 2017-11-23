@@ -27,14 +27,10 @@
               </div>
               <div class="card-body collapse in">
                 <div class="card-block">
-                  <p>You have following notifications</p>
-                  <ul class="list-group">
-                      <li class="list-group-item">
-                        <h5 class="list-group-item-heading"><%=@notification.title%></h5>
-                        <p class="list-group-item-text"><%=@notification.body%></p>
-                      </li>
-
-                  </ul>
+                  <div class="card-text">
+                    <p>Notifications will be broadcasted to all users instantly.</p>
+                  </div>
+                    <%= render partial: "form", locals: { notification: @notification} %>
                 </div>
               </div>
             </div>

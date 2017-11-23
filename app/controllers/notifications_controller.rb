@@ -32,7 +32,7 @@ class NotificationsController < ApplicationController
 
     respond_to do |format|
       if @notification.save
-        format.html { redirect_to @notification, notice: 'notification was successfully created.' }
+        format.html { redirect_to notifications_path, notice: 'notification was successfully created.' }
         format.json { render json: @notification, status: :created, location: @notification }
       else
         format.html { render action: "new" }
@@ -72,8 +72,6 @@ class NotificationsController < ApplicationController
   private
 
   def notification_params
-    params.permit(notifications)
+    params.require(:notification).permit(:title, :body)
   end
-
-
 end
