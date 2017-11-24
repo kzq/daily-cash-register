@@ -24,7 +24,7 @@
                   <li class="dropdown-menu-header">
                     <h6 class="dropdown-header m-0"><span class="grey darken-2">Notifications</span><span class="notification-tag tag tag-default tag-danger float-xs-right m-0"><%= @recent_notifications.length %> New</span></h6>
                   </li>
-                  <li class="list-group scrollable-container">
+                  <li class="list-group scrollable-container" id="recent_notifications">
                     <% @recent_notifications.each do |notification| %>
                       <%= render partial: "notifications/navbar_notifications", locals: {notification: notification} %>
                     <% end %>

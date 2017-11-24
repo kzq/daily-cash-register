@@ -15,7 +15,7 @@
               <span class="tag tag tag-primary tag-pill float-xs-right mr-2">2</span>
             </a>
             <ul class="menu-content">
-              <li class="active"><a href="index.html" data-i18n="nav.dash.main" class="menu-item">Dashboard</a>
+              <li class="active"><a href="<%= user_path(current_user) %>" data-i18n="nav.dash.main" class="menu-item">Dashboard 1</a>
               </li>
               <li><%= add_menu_item_to_sidebar(item: 'Dashboard 2', link: 'dashboard-2.html', data_i18n: 'nav.dash.main') %></li>
             </ul>

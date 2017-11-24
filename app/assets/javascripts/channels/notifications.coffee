@@ -7,4 +7,4 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    $('#notice').html(data.html)
+    $('#recent_notifications').prepend(data.html)
