@@ -1,0 +1,23 @@
+<%= form_with model: notification, local: true do |form| %>
+  <%= tag.div class: 'form-body' do%>
+    <%= tag.h4 class: 'form-section' do %>
+      <%= add_icon('icon-head')%>  Details
+    <% end %>
+    <%= tag.div class: 'row' do %>
+      <%= tag.div class: 'col-md-6' do %>
+        <%= tag.div class: 'form-group' do%>
+          <%= form.label :title, 'Title' %>
+          <%= form.text_field :title, id: :title, class: 'form-control', placeholder: 'Subject' %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= tag.div class: 'form-group' do%>
+    <%= form.label :body, 'Body' %>
+    <%= form.text_area :body, id: :body, class: 'form-control', placeholder: 'About Notification', rows: 5 %>
+  <% end %>
+  <%= tag.div class: 'form-actions' do%>
+    <%= form.button type: 'reset', class: 'btn btn-warning mr-1' do %><%= add_icon('icon-cross2')%> Cancel<% end %>
+    <%= form.button type: 'submit', class: 'btn btn-primary' do %><%= add_icon('icon-cross2')%> Save<% end %>
+  <% end %>
+<% end %>

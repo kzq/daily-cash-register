@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   # skip_before_action :authenticate_user! to controllers that should not
   # require authentication.
   before_action :authenticate_user!, unless: :devise_controller?
+  before_action :retrieve_recent_notifications, if: :user_signed_in?
 
   layout :set_layout
 
@@ -25,4 +26,7 @@ class ApplicationController < ActionController::Base
     store_location_for(resource, user_path(resource))
   end
 
+  def retrieve_recent_notifications
+   @recent_notifications = Notification.order('created_at desc').limit(20)
+  end
 end

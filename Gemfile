@@ -65,6 +65,8 @@ group :development, :test do
   gem 'chromedriver-helper'
   # rspec-rails is a testing framework for Rails 3.x, 4.x and 5.0.
   gem 'rspec-rails'
+  # A Ruby client that tries to match Redis' API one-to-one, while still providing an idiomatic interface.
+  gem 'redis', '~> 4.0.1'
 end
 
 group :development do

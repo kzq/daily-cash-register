@@ -18,4 +18,16 @@ module LayoutHelper
     "#{current_year}"
   end
   end
+
+  def add_menu_item_to_sidebar(options={})
+    options[:link].blank? ? add_menu_item_to_sidebar_without_link(options) : add_menu_item_to_sidebar_with_link(options)
+  end
+
+  def add_menu_item_to_sidebar_without_link(options)
+    content_tag(:span, options[:item], class: "menu-title", 'data-i18n': options[:data_i18n] )
+  end
+
+  def add_menu_item_to_sidebar_with_link(options)
+    link_to options[:item], options[:link], class: "menu-title", 'data-i18n': options[:data_i18n]
+  end
 end
