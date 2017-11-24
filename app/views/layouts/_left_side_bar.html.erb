@@ -20,7 +20,17 @@
               <li><%= add_menu_item_to_sidebar(item: 'Dashboard 2', link: 'dashboard-2.html', data_i18n: 'nav.dash.main') %></li>
             </ul>
           </li>
-          <li class=" nav-item">
+          <%= tag.li class: 'nav-item' do %>
+            <%= link_to users_path do %>
+              <%= add_icon "icon-home3" %>
+              <%= add_menu_item_to_sidebar(item: 'Users', data_i18n: 'nav.dash.main') %>
+            <% end %>
+            <%= tag.ul class: 'menu-content' do %>
+              <%= tag.li add_menu_item_to_sidebar(item: 'List', link: users_path, data_i18n: 'nav.dash.main') %>
+              <%= tag.li add_menu_item_to_sidebar(item: 'Profile', link: edit_user_path(current_user), data_i18n: 'nav.dash.main') %>
+            <% end %>
+          <% end %>
+          <li class="nav-item">
             <a href="#">
               <%= add_icon "icon-home3" %>
               <%= add_menu_item_to_sidebar(item: 'Notifications', data_i18n: 'nav.dash.main') %>
