@@ -8,14 +8,32 @@
       <!-- main menu content-->
       <div class="main-menu-content">
         <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
-          <li class=" nav-item"><a href="index.html"><i class="icon-home3"></i><span data-i18n="nav.dash.main" class="menu-title">Dashboard</span><span class="tag tag tag-primary tag-pill float-xs-right mr-2">2</span></a>
+          <li class=" nav-item">
+            <a href="#">
+              <%= add_icon "icon-home3" %>
+              <%= add_menu_item_to_sidebar(item: 'Dashboard', data_i18n: 'nav.dash.main') %>
+              <span class="tag tag tag-primary tag-pill float-xs-right mr-2">2</span>
+            </a>
             <ul class="menu-content">
-              <li class="active"><a href="index.html" data-i18n="nav.dash.main" class="menu-item">Dashboard</a>
+              <li class="active"><a href="<%= user_path(current_user) %>" data-i18n="nav.dash.main" class="menu-item">Dashboard 1</a>
               </li>
-              <li><a href="dashboard-2.html" data-i18n="nav.dash.main" class="menu-item">Dashboard 2</a>
-              </li>
+              <li><%= add_menu_item_to_sidebar(item: 'Dashboard 2', link: 'dashboard-2.html', data_i18n: 'nav.dash.main') %></li>
             </ul>
           </li>
+          <li class=" nav-item">
+            <a href="#">
+              <%= add_icon "icon-home3" %>
+              <%= add_menu_item_to_sidebar(item: 'Notifications', data_i18n: 'nav.dash.main') %>
+              <span class="tag tag tag-primary tag-pill float-xs-right mr-2">2</span>
+            </a>
+            <ul class="menu-content">
+              <li><%= add_menu_item_to_sidebar(item: 'Compose', link: new_notification_path, data_i18n: 'nav.dash.main') %>
+              </li>
+              <li><%= add_menu_item_to_sidebar(item: 'List', link: notifications_path, data_i18n: 'nav.dash.main') %></li>
+            </ul>
+          </li>
+
+
           <li class=" nav-item"><a href="#"><i class="icon-stack-2"></i><span data-i18n="nav.page_layouts.main" class="menu-title">Page layouts</span></a>
             <ul class="menu-content">
               <li><a href="layout-1-column.html" data-i18n="nav.page_layouts.1_column" class="menu-item">1 column</a>
