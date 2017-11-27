@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_11_24_135510) do
+ActiveRecord::Schema.define(version: 2017_11_27_142021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,23 @@ ActiveRecord::Schema.define(version: 2017_11_24_135510) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token"
+  end
+
+  create_table "weekly_sales", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.decimal "sales"
+    t.decimal "rent"
+    t.decimal "cost"
+    t.decimal "gross_profit"
+    t.decimal "net_profit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cost"], name: "index_weekly_sales_on_cost"
+    t.index ["gross_profit"], name: "index_weekly_sales_on_gross_profit"
+    t.index ["net_profit"], name: "index_weekly_sales_on_net_profit"
+    t.index ["rent"], name: "index_weekly_sales_on_rent"
+    t.index ["sales"], name: "index_weekly_sales_on_sales"
   end
 
 end
