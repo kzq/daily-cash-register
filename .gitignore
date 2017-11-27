@@ -34,7 +34,6 @@
 /*.sublime-workspace
 
 # Ignore config files
-config/secrets.yml
 config/database.yml
 config/cable.yml
 config/mail.yml
