@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Attach cloud and local files in Rails applications
 gem 'activestorage'
+# Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3)
+gem 'aws-sdk-s3', '~> 1'
 
 # Use ActiveStorage variant
  gem 'mini_magick', '~> 4.8'
