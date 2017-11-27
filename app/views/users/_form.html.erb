@@ -1,0 +1,31 @@
+<%= form_with model: user, local: true do |form| %>
+  <%= tag.div class: 'form-body' do%>
+    <%= tag.h4 class: 'form-section' do %>
+      <%= add_icon('icon-head')%>  Details
+    <% end %>
+    <%= tag.div class: 'row' do %>
+      <%= tag.div class: 'col-md-6' do %>
+        <%= tag.div class: 'form-group' do%>
+          <%= form.label :email, 'Email' %>
+          <%= form.text_field :email, id: :email, class: 'form-control', placeholder: 'Subject' %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= tag.div class: 'form-group' do%>
+    <%= form.label :avatar, 'Select avatar' %>
+    <%# uplaod via application %>
+    <%= form.file_field :avatar, id: :avatar, class: 'form-control' %>
+    <%# uplaod directly to cloud bypassing app %>
+    <%#= form.file_field :avatar, id: :avatar, class: 'form-control', direct_uplaod: true %>
+  <% end %>
+  <%= tag.div class: 'form-group' do%>
+    <%= form.label :documents, 'Select documents' %>
+    <%= form.file_field :documents, id: :documents, multiple: true, class: 'form-control' %>
+    <%#= form.file_field :documents, id: :documents, multiple: true, class: 'form-control', direct_uplaod: true %>
+  <% end %>
+  <%= tag.div class: 'form-actions' do%>
+    <%= form.button type: 'reset', class: 'btn btn-warning mr-1' do %><%= add_icon('icon-cross2')%> Cancel<% end %>
+    <%= form.button type: 'submit', class: 'btn btn-primary' do %><%= add_icon('icon-cross2')%> Save<% end %>
+  <% end %>
+<% end %>
