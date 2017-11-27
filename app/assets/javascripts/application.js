@@ -12,6 +12,7 @@
 //
 //= require jquery3
 //= require jquery_ujs
+//= require activestorage
 //= require popper
 //= require vendors/ui/tether.min
 //= require core/bootstrap.min

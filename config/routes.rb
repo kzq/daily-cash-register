@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     root to: "users/sessions#new"
   end
 
-  resources :users , :only => [:show]
+  resources :users , :only => [:show, :index, :edit, :update]
   resources :notifications
 end
