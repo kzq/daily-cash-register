@@ -8,42 +8,31 @@
       <!-- main menu content-->
       <div class="main-menu-content">
         <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
-          <li class=" nav-item">
-            <a href="#">
-              <%= add_icon "icon-home3" %>
-              <%= add_menu_item_to_sidebar(item: 'Dashboard', data_i18n: 'nav.dash.main') %>
-              <span class="tag tag tag-primary tag-pill float-xs-right mr-2">2</span>
-            </a>
-            <ul class="menu-content">
-              <li class="active"><a href="<%= user_path(current_user) %>" data-i18n="nav.dash.main" class="menu-item">Dashboard 1</a>
-              </li>
-              <li><%= add_menu_item_to_sidebar(item: 'Dashboard 2', link: 'dashboard-2.html', data_i18n: 'nav.dash.main') %></li>
-            </ul>
-          </li>
           <%= tag.li class: 'nav-item' do %>
-            <%= link_to users_path do %>
-              <%= add_icon "icon-home3" %>
-              <%= add_menu_item_to_sidebar(item: 'Users', data_i18n: 'nav.dash.main') %>
+            <%= display_menu_title(item: 'Dashboard', link: user_path(current_user), tag: 4) %>
+          <% end %>
+          <%= tag.li class: 'nav-item' do %>
+            <%= display_menu_title(item: 'Cash Register') %>
+            <%= tag.ul class: 'menu-content' do %>
+              <%= tag.li add_menu_item_to_sidebar(item: 'Add Sales', link: new_weekly_sale_path, data_i18n: 'nav.dash.main') %>
+              <%= tag.li add_menu_item_to_sidebar(item: 'Weekly Sales', link: weekly_sales_path, data_i18n: 'nav.dash.main') %>
             <% end %>
+          <% end %>
+          <%= tag.li class: 'nav-item' do %>
+            <%= display_menu_title(item: 'Users', link: users_path) %>
             <%= tag.ul class: 'menu-content' do %>
               <%= tag.li add_menu_item_to_sidebar(item: 'List', link: users_path, data_i18n: 'nav.dash.main') %>
               <%= tag.li add_menu_item_to_sidebar(item: 'Profile', link: edit_user_path(current_user), data_i18n: 'nav.dash.main') %>
             <% end %>
           <% end %>
           <li class="nav-item">
-            <a href="#">
-              <%= add_icon "icon-home3" %>
-              <%= add_menu_item_to_sidebar(item: 'Notifications', data_i18n: 'nav.dash.main') %>
-              <span class="tag tag tag-primary tag-pill float-xs-right mr-2">2</span>
-            </a>
+            <%= display_menu_title(item: 'Notifications', tag: 7) %>
             <ul class="menu-content">
               <li><%= add_menu_item_to_sidebar(item: 'Compose', link: new_notification_path, data_i18n: 'nav.dash.main') %>
               </li>
               <li><%= add_menu_item_to_sidebar(item: 'List', link: notifications_path, data_i18n: 'nav.dash.main') %></li>
             </ul>
           </li>
-
-
           <li class=" nav-item"><a href="#"><i class="icon-stack-2"></i><span data-i18n="nav.page_layouts.main" class="menu-title">Page layouts</span></a>
             <ul class="menu-content">
               <li><a href="layout-1-column.html" data-i18n="nav.page_layouts.1_column" class="menu-item">1 column</a>

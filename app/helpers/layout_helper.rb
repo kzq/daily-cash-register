@@ -30,4 +30,11 @@ module LayoutHelper
   def add_menu_item_to_sidebar_with_link(options)
     link_to options[:item], options[:link], class: "menu-title", 'data-i18n': options[:data_i18n]
   end
+
+  # Display menu title for navbar
+  # It displays only parent item with optional
+  # icon and tag
+  def display_menu_title(item:, link: '#', icon: 'icon-home3', tag: nil)
+    render 'layouts/menu_title', item: item, link: link, icon: icon, badge: tag
+  end
 end
