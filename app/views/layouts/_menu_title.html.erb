@@ -1,0 +1,9 @@
+<%= link_to link do %>
+  <%= add_icon icon %>
+  <%= add_menu_item_to_sidebar(item: item, data_i18n: 'nav.dash.main') %>
+  <% if badge!=nil %>
+    <%= tag.span class: 'tag tag tag-primary tag-pill float-xs-right mr-2' do %>
+      <%= badge %>
+    <% end %>
+  <% end %>
+<% end %>

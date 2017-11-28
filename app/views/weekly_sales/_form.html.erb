@@ -1,0 +1,93 @@
+<%= form_with model: weekly_sale, local: true do |form| %>
+  <% if weekly_sale.errors.any? %>
+    <%= tag.div "#{pluralize(weekly_sale.errors.count, "error")} occured.", id: 'total_errors' ,class: 'alert alert-danger mb-2', role: 'alert'%>
+    <% weekly_sale.errors.full_messages.each do |message| %>
+        <%= tag.div message, class: 'alert alert-danger mb-2', role: 'alert'%>
+      <% end %>
+  <% end %>
+  <%= tag.div class: 'form-body' do%>
+    <%= tag.h4 class: 'form-section' do %>
+      <%= add_icon('icon-head')%>  Details
+    <% end %>
+    <%= tag.div class: 'row' do %>
+      <%= tag.div class: 'col-md-6' do %>
+        <%= tag.div class: 'form-group' do%>
+          <%= form.label :start_date, 'Start Date' %>
+          <%= form.text_field :start_date, id: :weekly_sale_start_date, class: 'form-control', placeholder: 'Week start date', type: 'date' %>
+        <% end %>
+      <% end %>
+      <%= tag.div class: 'col-md-6' do %>
+        <%= tag.div class: 'form-group' do%>
+          <%= form.label :end_date, 'End Date' %>
+          <%= form.text_field :end_date, id: :weekly_sale_end_date, class: 'form-control', placeholder: 'Week end date', type: 'date' %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= tag.div class: 'row' do %>
+      <%= tag.div class: 'col-md-6' do %>
+        <%= tag.div class: 'form-group' do%>
+          <%= form.label :sale, 'Total sale' %>
+            <%= tag.div class: 'input-group' do %>
+              <%= tag.span '£', class: 'input-group-addon' %>
+              <%= form.text_field :sale, id: :weekly_sale_sale, class: 'form-control square', placeholder: 'Total sale amount (£)', 'aria-label': 'Amount (to the nearest currency)' %>
+              <%= tag.span '.00', class: 'input-group-addon' %>
+            <% end %>
+        <% end %>
+      <% end %>
+      <%= tag.div class: 'col-md-6' do %>
+        <%= tag.div class: 'form-group' do%>
+          <%= form.label :rent, 'Rent' %>
+            <%= tag.div class: 'input-group' do %>
+              <%= tag.span '£', class: 'input-group-addon' %>
+              <%= form.text_field :rent, id: :weekly_sale_rent, class: 'form-control square', placeholder: 'Weekly Rent', 'aria-label': 'Amount (to the nearest currency)' %>
+              <%= tag.span '.00', class: 'input-group-addon' %>
+            <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= tag.div class: 'row' do %>
+      <%= tag.div class: 'col-md-6' do %>
+        <%= tag.div class: 'form-group' do%>
+          <%= form.label :gross_profit, 'Gross Profit' %>
+            <%= tag.div class: 'input-group' do %>
+              <%= tag.span '£', class: 'input-group-addon' %>
+              <%= form.text_field :gross_profit, id: :weekly_sale_gross_profit, class: 'form-control square', placeholder: 'Weekly Gross Profit', 'aria-label': 'Amount (to the nearest currency)' %>
+              <%= tag.span '.00', class: 'input-group-addon' %>
+            <% end %>
+        <% end %>
+      <% end %>
+      <%= tag.div class: 'col-md-6' do %>
+        <%= tag.div class: 'form-group' do%>
+          <%= form.label :net_profit, 'Net Profit' %>
+            <%= tag.div class: 'input-group' do %>
+              <%= tag.span '£', class: 'input-group-addon' %>
+              <%= form.text_field :net_profit, id: :weekly_sale_net_profit, class: 'form-control square', placeholder: 'Weekly Net Profit', 'aria-label': 'Amount (to the nearest currency)' %>
+              <%= tag.span '.00', class: 'input-group-addon' %>
+            <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= tag.div class: 'row' do %>
+      <%= tag.div class: 'col-md-6' do %>
+        <%= tag.div class: 'form-group' do%>
+          <%= form.label :cost, 'Product Cost' %>
+            <%= tag.div class: 'input-group' do %>
+              <%= tag.span '£', class: 'input-group-addon' %>
+              <%= form.text_field :cost, id: :weekly_sale_cost, class: 'form-control square', placeholder: 'Cost amount (£)', 'aria-label': 'Amount (to the nearest currency)' %>
+              <%= tag.span '.00', class: 'input-group-addon' %>
+            <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% if true %>
+    <%= tag.div class: 'form-group' do%>
+      <%= form.label :daily_sale_sheets, 'Uplaod daily sale sheets' %>
+      <%= form.file_field :daily_sale_sheets, id: :daily_sale_sheets, multiple: true, class: 'form-control' %>
+    <% end %>
+  <% end %>
+  <% end %>
+  <%= tag.div class: 'form-actions' do%>
+    <%= form.button type: 'reset', class: 'btn btn-warning mr-1' do %><%= add_icon('icon-cross2')%> Cancel<% end %>
+    <%= form.button type: 'submit', class: 'btn btn-primary' do %><%= add_icon('icon-cross2')%> Create Weekly sale<% end %>
+  <% end %>
+<% end %>

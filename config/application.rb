@@ -28,5 +28,10 @@ module DailyCashRegister
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    MiniMagick.configure do |config|
+  config.validate_on_create = false
+  config.validate_on_write = false
+end
   end
 end
