@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_11_27_142021) do
+ActiveRecord::Schema.define(version: 2017_11_28_124115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2017_11_27_142021) do
   create_table "weekly_sales", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
-    t.decimal "sales"
+    t.decimal "sale"
     t.decimal "rent"
     t.decimal "cost"
     t.decimal "gross_profit"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2017_11_27_142021) do
     t.index ["gross_profit"], name: "index_weekly_sales_on_gross_profit"
     t.index ["net_profit"], name: "index_weekly_sales_on_net_profit"
     t.index ["rent"], name: "index_weekly_sales_on_rent"
-    t.index ["sales"], name: "index_weekly_sales_on_sales"
+    t.index ["sale"], name: "index_weekly_sales_on_sale"
   end
 
 end

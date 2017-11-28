@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @weekly_sale.start_date %>
+</p>
+
+
+
+<p>
+  <strong>End date:</strong>
+  <%= @weekly_sale.end_date %>
+</p>
+
+
+
+<p>
+  <strong>Sales:</strong>
+  <%= @weekly_sale.sale %>
+</p>
+
+<p>
+  <strong>Rent:</strong>
+  <%= @weekly_sale.rent %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @weekly_sale.cost %>
+</p>
+
+<p>
+  <strong>Gross profit:</strong>
+  <%= @weekly_sale.gross_profit %>
+</p>
+
+<p>
+  <strong>Net profit:</strong>
+  <%= @weekly_sale.net_profit %>
+</p>
+
+<%= link_to 'Edit', edit_weekly_sale_path(@weekly_sale) %> |
+<%= link_to 'Back', weekly_sales_path %>

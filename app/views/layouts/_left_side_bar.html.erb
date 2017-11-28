@@ -12,6 +12,13 @@
             <%= display_menu_title(item: 'Dashboard', link: user_path(current_user), tag: 4) %>
           <% end %>
           <%= tag.li class: 'nav-item' do %>
+            <%= display_menu_title(item: 'Cash Register') %>
+            <%= tag.ul class: 'menu-content' do %>
+              <%= tag.li add_menu_item_to_sidebar(item: 'Add Sales', link: new_weekly_sale_path, data_i18n: 'nav.dash.main') %>
+              <%= tag.li add_menu_item_to_sidebar(item: 'Weekly Sales', link: weekly_sales_path, data_i18n: 'nav.dash.main') %>
+            <% end %>
+          <% end %>
+          <%= tag.li class: 'nav-item' do %>
             <%= display_menu_title(item: 'Users', link: users_path) %>
             <%= tag.ul class: 'menu-content' do %>
               <%= tag.li add_menu_item_to_sidebar(item: 'List', link: users_path, data_i18n: 'nav.dash.main') %>
