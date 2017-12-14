@@ -72,6 +72,8 @@ group :development, :test do
   gem 'rspec-rails'
   # A Ruby client that tries to match Redis' API one-to-one, while still providing an idiomatic interface.
   gem 'redis', '~> 4.0.1'
+  # Ruby static code analyzer
+  gem 'rubocop', '~> 0.52.0', require: false
 end
 
 group :development do
