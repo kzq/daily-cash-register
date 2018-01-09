@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class NotificationsController < ApplicationController
   # GET /notifications
   # GET /notifications.json
   def index
-    @notifications = Notification.order('created_at desc').limit(20)
+    @notifications = Notification.order("created_at desc").limit(20)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @notifications }
@@ -32,7 +34,7 @@ class NotificationsController < ApplicationController
 
     respond_to do |format|
       if @notification.save
-        format.html { redirect_to notifications_path, notice: 'notification was successfully created.' }
+        format.html { redirect_to notifications_path, notice: "notification was successfully created." }
         format.json { render json: @notification, status: :created, location: @notification }
       else
         format.html { render action: "new" }
@@ -48,7 +50,7 @@ class NotificationsController < ApplicationController
 
     respond_to do |format|
       if @notification.update_attributes(notification_params)
-        format.html { redirect_to @notification, notice: 'notification was successfully updated.' }
+        format.html { redirect_to @notification, notice: "notification was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -71,7 +73,7 @@ class NotificationsController < ApplicationController
 
   private
 
-  def notification_params
-    params.require(:notification).permit(:title, :body)
-  end
+    def notification_params
+      params.require(:notification).permit(:title, :body)
+    end
 end

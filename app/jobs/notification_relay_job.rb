@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NotificationRelayJob < ApplicationJob
   queue_as :default
 
@@ -7,7 +9,7 @@ class NotificationRelayJob < ApplicationJob
   # ActionCable.server.broadcast "notifications", html: html, id: notification.id, status: {created, updated, dleted}
   #
   def perform(notification)
-    html = ApplicationController.render partial: "notifications/navbar_notifications", locals: {notification: notification}, formats: [:html]
+    html = ApplicationController.render partial: "notifications/navbar_notifications", locals: { notification: notification }, formats: [:html]
     ActionCable.server.broadcast "notifications", html: html
   end
 end

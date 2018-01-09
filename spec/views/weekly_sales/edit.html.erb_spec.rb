@@ -1,17 +1,19 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "weekly_sales/edit", type: :view do
   before(:each) do
     @weekly_sale = assign(:weekly_sale, WeeklySale.create!(
-      :start_date => "MyString",
-      :datetime => "MyString",
-      :end_date => "MyString",
-      :datetime => "MyString",
-      :sales => "9.99",
-      :rent => "9.99",
-      :cost => "9.99",
-      :gross_profit => "9.99",
-      :net_profit => "9.99"
+                                          start_date: "MyString",
+                                          datetime: "MyString",
+                                          end_date: "MyString",
+                                          datetime: "MyString",
+                                          sales: "9.99",
+                                          rent: "9.99",
+                                          cost: "9.99",
+                                          gross_profit: "9.99",
+                                          net_profit: "9.99"
     ))
   end
 

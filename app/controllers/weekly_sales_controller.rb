@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class WeeklySalesController < ApplicationController
-  before_action :set_weekly_sale, only: [:show, :edit, :update, :destroy]
+  before_action :set_weekly_sale, only: %i[show edit update destroy]
 
   # GET /weekly_sales
   # GET /weekly_sales.json
@@ -31,7 +33,7 @@ class WeeklySalesController < ApplicationController
         if daily_sale_sheets
           @weekly_sale.daily_sale_sheets.attach(daily_sale_sheets)
         end
-        format.html { redirect_to weekly_sales_path, notice: 'Weekly sale was successfully created.' }
+        format.html { redirect_to weekly_sales_path, notice: "Weekly sale was successfully created." }
         format.json { render :show, status: :created, location: @weekly_sale }
       else
         format.html { render :new }
@@ -45,7 +47,7 @@ class WeeklySalesController < ApplicationController
   def update
     respond_to do |format|
       if @weekly_sale.update(weekly_sale_params)
-        format.html { redirect_to @weekly_sale, notice: 'Weekly sale was successfully updated.' }
+        format.html { redirect_to @weekly_sale, notice: "Weekly sale was successfully updated." }
         format.json { render :show, status: :ok, location: @weekly_sale }
       else
         format.html { render :edit }
@@ -59,7 +61,7 @@ class WeeklySalesController < ApplicationController
   def destroy
     @weekly_sale.destroy
     respond_to do |format|
-      format.html { redirect_to weekly_sales_url, notice: 'Weekly sale was successfully destroyed.' }
+      format.html { redirect_to weekly_sales_url, notice: "Weekly sale was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -76,6 +78,6 @@ class WeeklySalesController < ApplicationController
     end
 
     def daily_sale_sheet_params
-    params.dig(:weekly_sale, :daily_sale_sheets)
+      params.dig(:weekly_sale, :daily_sale_sheets)
   end
 end
