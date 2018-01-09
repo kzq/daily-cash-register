@@ -70,12 +70,13 @@ gem "coffee-rails"
 
 group :test do
   gem "database_cleaner"
-  gem "factory_girl_rails"
   gem "faker"
   gem "shoulda-matchers"
 end
 
 group :development, :test do
+  # factory_bot_rails provides Rails integration for factory_bot
+  gem "factory_bot_rails", "~> 4.8"
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", "~> 2.15"
 
