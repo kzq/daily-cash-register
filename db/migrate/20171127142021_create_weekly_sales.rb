@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateWeeklySales < ActiveRecord::Migration[5.2]
   def change
     create_table :weekly_sales do |t|

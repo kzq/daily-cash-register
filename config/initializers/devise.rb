@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -12,7 +14,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'do-not-reply@scr.com'
+  config.mailer_sender = "do-not-reply@scr.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -24,7 +26,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -276,5 +278,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   # secret key base
-  Devise.secret_key = '45e1653953e9c18596d67750757498ee1d1de9438cc6a0078e2db21b12f816c77eb3cbc34c38f5cbdec46fe5eb50375d833c2d0ec74c0b39a2724efebfc6fba5'
+  Devise.secret_key = "45e1653953e9c18596d67750757498ee1d1de9438cc6a0078e2db21b12f816c77eb3cbc34c38f5cbdec46fe5eb50375d833c2d0ec74c0b39a2724efebfc6fba5"
 end
