@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.order('created_at desc').limit(20)
+    @users = User.order("created_at desc").limit(20)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
@@ -33,7 +35,7 @@ class UsersController < ApplicationController
         if documents
           @user.documents.attach(documents)
         end
-        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_path, notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -44,12 +46,11 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:email)
-  end
+    def user_params
+      params.require(:user).permit(:email)
+    end
 
-  def attachment_params
-    params.require(:user).permit(:avatar, :documents)
-  end
-
+    def attachment_params
+      params.require(:user).permit(:avatar, :documents)
+    end
 end
