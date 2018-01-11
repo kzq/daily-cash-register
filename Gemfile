@@ -97,6 +97,8 @@ group :development, :test do
 
   # Ruby static code analyzer
   gem "rubocop", "~> 0.52.0", require: false
+  # extracting assigns and assert_template from ActionDispatch.
+  gem 'rails-controller-testing', "~> 1.0.2"
 end
 
 group :development do
