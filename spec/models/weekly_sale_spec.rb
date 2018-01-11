@@ -23,14 +23,14 @@ RSpec.describe WeeklySale, type: :model do
       end
 
       it "is invalid if not a number" do
-        weekly_sale = build(:weekly_sale, rent: 'abc')
+        weekly_sale = build(:weekly_sale, rent: "abc")
         weekly_sale.valid?
         expect(weekly_sale.errors[:rent]).to include("is not a number")
       end
     end
 
     it "is invalid without cost" do
-     expect(build(:weekly_sale, cost: nil)).not_to be_valid
+      expect(build(:weekly_sale, cost: nil)).not_to be_valid
     end
 
     it "is invalid without gross_profit" do
