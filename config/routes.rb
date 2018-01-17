@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     sessions: "users/sessions"
   }
 
+  # use devise_scope if you want custom routes to access devise controllers
+  # here root path is accessing devise controller
   devise_scope :user do
     root to: "users/sessions#new"
   end

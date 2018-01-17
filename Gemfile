@@ -70,12 +70,13 @@ gem "coffee-rails"
 
 group :test do
   gem "database_cleaner"
-  gem "factory_girl_rails"
   gem "faker"
   gem "shoulda-matchers"
 end
 
 group :development, :test do
+  # factory_bot_rails provides Rails integration for factory_bot
+  gem "factory_bot_rails", "~> 4.8"
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", "~> 2.15"
 
@@ -96,6 +97,8 @@ group :development, :test do
 
   # Ruby static code analyzer
   gem "rubocop", "~> 0.52.0", require: false
+  # extracting assigns and assert_template from ActionDispatch.
+  gem "rails-controller-testing", "~> 1.0.2"
 end
 
 group :development do
@@ -109,6 +112,10 @@ group :development do
   # Access an interactive console on exception pages or by
   # calling 'console' anywhere in the code.
   gem "web-console", ">= 3.3.0"
+  # Guard::RSpec automatically run your specs
+  gem "guard-rspec", "~> 4.7", require: false
+  # this gem implements the rspec command for Spring.
+  gem "spring-commands-rspec", "~> 1.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
