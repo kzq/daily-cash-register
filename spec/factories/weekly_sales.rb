@@ -7,5 +7,13 @@ FactoryBot.define do
     cost  14890
     gross_profit 6000
     net_profit 5500
+
+    factory :invalid_weekly_sale do
+      sale nil
+      rent ""
+      cost "abc"
+      gross_profit 6000
+      net_profit 5500
+    end
   end
 end

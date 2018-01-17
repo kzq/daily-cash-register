@@ -78,7 +78,7 @@ RSpec.describe NotificationsController, type: :controller do
         end
 
         it "saves the new notification in the database" do
-          expect{
+          expect {
             post :create, params: { notification: @notification }
           }.to change(Notification, :count).by(1)
         end
@@ -91,7 +91,7 @@ RSpec.describe NotificationsController, type: :controller do
 
       context "with invalid attributes" do
         it "does not save the new notification in the database" do
-          expect{
+          expect {
             post :create, params: { notification: attributes_for(:invalid_notification) }
           }.to_not change(Notification, :count)
         end
@@ -147,13 +147,13 @@ RSpec.describe NotificationsController, type: :controller do
       end
 
       it "deletes the notifications" do
-        expect{
-          delete :destroy, params: { id: @notification}
+        expect {
+          delete :destroy, params: { id: @notification }
         }.to change(Notification, :count).by(-1)
       end
 
       it "redirects to notifications#index" do
-        delete :destroy, params: { id: @notification}
+        delete :destroy, params: { id: @notification }
         expect(response).to redirect_to notifications_url
       end
 

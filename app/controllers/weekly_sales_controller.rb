@@ -12,6 +12,7 @@ class WeeklySalesController < ApplicationController
   # GET /weekly_sales/1
   # GET /weekly_sales/1.json
   def show
+    @weekly_sale = WeeklySale.find(params[:id])
   end
 
   # GET /weekly_sales/new

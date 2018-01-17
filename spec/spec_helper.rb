@@ -102,6 +102,6 @@ RSpec.configure do |config|
 
   # Include shared examples. In order to keep your test suite boot time down,
   # it's a good idea to not autorequire all files in a directory like this
-  Dir["./spec/controllers/shared_examples/**/*.rb"].sort.each { |f| require f}
-  Dir["./spec/models/shared_examples/**/*.rb"].sort.each { |f| require f}
+  Dir["./spec/controllers/shared_examples/**/*.rb"].sort.each { |f| require f }
+  Dir["./spec/models/shared_examples/**/*.rb"].sort.each { |f| require f }
 end
