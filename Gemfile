@@ -68,6 +68,9 @@ gem "bootstrap", "~> 4.0.0.beta2.1"
 
 gem "coffee-rails"
 
+# HTTP/REST API client library
+gem 'faraday', '~> 0.14.0'
+
 group :test do
   gem "database_cleaner"
   gem "faker"
