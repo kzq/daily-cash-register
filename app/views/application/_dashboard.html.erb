@@ -1,0 +1,27 @@
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-body">
+            <div class="row">
+                <% cards.each do |card| %>
+                    <div class="col-xl-3 col-lg-6 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-block">
+                                    <div class="media">
+                                        <div class="media-body text-xs-left">
+                                            <h3 class="<%=card.color%>"><%=card.value%></h3>
+                                            <span><%=card.label%></span>
+                                        </div>
+                                        <div class="media-right media-middle">
+                                            <i class="<%=card.icon%> cyan font-large-2 float-xs-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 <% end %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -39,4 +39,10 @@ module LayoutHelper
   def display_menu_title(item:, link: "#", icon: "icon-home3", tag: nil)
     render "layouts/menu_title", item: item, link: link, icon: icon, badge: tag
   end
+
+  # renders a row of dashboard cards
+  # by default is renders emty row
+  def create_dashboard(dashboard_cards = [])
+    render partial: "dashboard", locals: { cards: dashboard_cards }
+  end
 end
