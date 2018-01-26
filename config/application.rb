@@ -46,5 +46,7 @@ module DailyCashRegister
         request_specs: false
       g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
+    # uncomment if guard fails to detect files in services directory
+    # Spring.watch "app/services/**"
   end
 end
