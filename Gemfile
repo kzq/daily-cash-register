@@ -75,6 +75,8 @@ group :test do
   gem "database_cleaner"
   gem "faker"
   gem "shoulda-matchers"
+  # stubbing HTTP requests and setting expectations on HTTP requests
+  gem 'webmock', '~> 3.3.0'
 end
 
 group :development, :test do
