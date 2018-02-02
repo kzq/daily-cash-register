@@ -4,7 +4,7 @@ require "factory_bot"
 require "shoulda-matchers"
 require "devise"
 require "support/factory_bot"
-require 'webmock/rspec'
+require "webmock/rspec"
 
 # disabled external requests while allowing localhost
 WebMock.disable_net_connect!(allow_localhost: true)

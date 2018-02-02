@@ -16,7 +16,7 @@ RSpec.describe NobelPrizeDataCollector do
       expect(data).to be_an_instance_of(Hash)
       expect(data).to eq(JSON.parse(response))
       expect(data.dig("prizes")).to be_an_instance_of(Array)
-      expect(data.dig("prizes",1,"year")).to eq("2017")
+      expect(data.dig("prizes", 1, "year")).to eq("2017")
     end
   end
 end

@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe NobelPrizeController, type: :controller do
   describe "guest access" do
@@ -9,12 +11,12 @@ RSpec.describe NobelPrizeController, type: :controller do
     login_user
 
     describe "GET #index" do
-      let(:data) { [{:label=>"physics", :value=>111}, {:label=>"literature", :value=>110}] }
+      let(:data) { [{ label: "physics", value: 111 }, { label: "literature", value: 110 }] }
       let(:data_collector) { double("NobelPrizeDataCollector", collect: "data_collection") }
       let(:teller) { double("NobelPrizeTeller", total_prizes_per_subject: data) }
       let(:card_1) { double("DashboardCard", label: "physics", value: "111") }
       let(:card_2) { double("DashboardCard", label: "literature", value: "110") }
-      let(:dashboard_cards) { [ card_1,card_2 ] }
+      let(:dashboard_cards) { [ card_1, card_2 ] }
 
       before :each do
         # mock class methods
