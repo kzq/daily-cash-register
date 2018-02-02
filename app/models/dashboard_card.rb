@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DashboardCard
   include ActiveModel::Validations
 
@@ -6,7 +8,7 @@ class DashboardCard
   attr_accessor :value, :label, :icon, :color
 
   def initialize(card = {})
-    @value, @label, @icon, @color = card.fetch(:value), card.fetch(:label), card.fetch(:icon,"icon-ios-help-outline"), card.fetch(:color,"cyan")
+    @value, @label, @icon, @color = card.fetch(:value), card.fetch(:label), card.fetch(:icon, "icon-ios-help-outline"), card.fetch(:color, "cyan")
   end
 
   # create single or multiple dashboard cards

@@ -39,9 +39,9 @@ RSpec.describe DashboardCard do
   end
 
   describe "#create" do
-    let(:math_card_params) { attributes_for(:dashboard_card, value: "3,000", label:"Math") }
-    let(:chemistry_card_params) { attributes_for(:dashboard_card, value: "5,000", label:"Chemistry") }
-    let(:physics_card_params) { attributes_for(:dashboard_card, value: "4,000", label:"Physics") }
+    let(:math_card_params) { attributes_for(:dashboard_card, value: "3,000", label: "Math") }
+    let(:chemistry_card_params) { attributes_for(:dashboard_card, value: "5,000", label: "Chemistry") }
+    let(:physics_card_params) { attributes_for(:dashboard_card, value: "4,000", label: "Physics") }
 
     it "creates a single dashboard card" do
       card = described_class.create(math_card_params)
@@ -53,7 +53,7 @@ RSpec.describe DashboardCard do
       math_card = described_class.create(math_card_params)
       chemistry_card = described_class.create(chemistry_card_params)
       physics_card = described_class.create(physics_card_params)
-      cards = described_class.create([math_card_params, physics_card_params,chemistry_card_params])
+      cards = described_class.create([math_card_params, physics_card_params, chemistry_card_params])
       expect(cards).to match_array([math_card, physics_card, chemistry_card])
     end
   end
