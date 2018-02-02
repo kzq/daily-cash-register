@@ -1,17 +1,23 @@
 class NobelPrizeTeller
-  attr_reader :status
+  attr_reader :data
 
-  def initialize
-    @status = nil
+  def initialize(nobel_prizes_archive)
+    @data = nobel_prizes_archive
   end
 
-  def download
-    conn = Faraday.new url: "http://api.nobelprize.org/v1"
-    @response = conn.get "/prize.json"
-    @status = "processed"
+  def total_prizes_per_subject
+    process_data
   end
 
-  def data
-    JSON.parse(@response.body)
+  private
+
+  def process_data
+    # manipulate hash data
+    # exp: {antisocial: 221, violent: 35 }
+    total_categaories_with_count = @data["prizes"].each_with_object(Hash.new(0)) { |h1, h2| h2[h1["category"]] += 1 }
+    # sort by number of crimes in desending order
+    total_categaories_with_count = total_categaories_with_count.sort_by {|_key, value| value}.reverse.to_h
+    # convert { key: value } single hash into array of hashes
+    total_categaories_with_count.collect { |k,v| { label: k, value: v } }
   end
 end

@@ -3,23 +3,25 @@
 require "rails_helper"
 
 RSpec.describe NobelPrizeTeller do
-  let(:nobel_prize_teller) { described_class.new }
+  subject { described_class.new(nobel_prizes_archive) }
 
-  before :each do
-    nobel_prize_teller.download
+  let(:nobel_prizes_archive) { JSON.parse(file_fixture("nobel_prizes.json").read) }
+
+  it { is_expected.to have_attributes(data: nobel_prizes_archive) }
+
+  describe "#total_prizes_per_subject" do
+    let (:total_prizes_per_subject) { subject.total_prizes_per_subject }
+
+    it "returns an array" do
+      expect(total_prizes_per_subject).to be_a(Array)
+    end
+
+    it "includes value key" do
+      expect(total_prizes_per_subject.first).to have_key(:value)
+    end
+
+    it "includes label key" do
+      expect(total_prizes_per_subject.first).to have_key(:label)
+    end
   end
-
-  it "retrieves data from external service" do
-    expect(nobel_prize_teller.status).to eq("processed")
-  end
-
-  it "parses json data into to hash" do
-    expect(nobel_prize_teller.data).to be_a(Hash)
-  end
-
-  it "provides list of all nobel prizes catgories"
-
-  it "returns total nobel prizes in physics"
-
-  it "returns total nobel prizes in chemistry"
 end
