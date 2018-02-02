@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe NobelPrizeController, type: :controller do
   describe "guest access" do
@@ -9,6 +11,20 @@ RSpec.describe NobelPrizeController, type: :controller do
     login_user
 
     describe "GET #index" do
+      let(:data) { [{ label: "physics", value: 111 }, { label: "literature", value: 110 }] }
+      let(:data_collector) { double("NobelPrizeDataCollector", collect: "data_collection") }
+      let(:teller) { double("NobelPrizeTeller", total_prizes_per_subject: data) }
+      let(:card_1) { double("DashboardCard", label: "physics", value: "111") }
+      let(:card_2) { double("DashboardCard", label: "literature", value: "110") }
+      let(:dashboard_cards) { [ card_1, card_2 ] }
+
+      before :each do
+        # mock class methods
+        allow(NobelPrizeDataCollector).to receive(:new).and_return(data_collector)
+        allow(NobelPrizeTeller).to receive(:new).with(data_collector.collect).and_return(teller)
+        allow(DashboardCard).to receive(:create).and_return(dashboard_cards)
+      end
+
       before :each do |example|
         unless example.metadata[:skip_before]
           get :index
@@ -17,13 +33,8 @@ RSpec.describe NobelPrizeController, type: :controller do
 
       include_examples "request response examples", :index
 
+
       it "populates array of all dashboard cards", :skip_before do
-        data = [{ value: "15", label: "Math"}, { value: "12", label: "Computing"},{ value: "12", label: "Physics"}]
-        dashboard_card = class_double("DashboardCard").as_stubbed_const
-        math_card = double("DashboardCard", value: "15", label: "Math")
-        computing_card = double("DashboardCard", value: "12", label: "Computing")
-        dashboard_cards = [ math_card, computing_card ]
-        expect(dashboard_card).to receive(:create).with(data).and_return(dashboard_cards)
         get :index
         expect(assigns(:dashboard_cards)).to match_array(dashboard_cards)
       end
